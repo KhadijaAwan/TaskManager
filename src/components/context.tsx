@@ -31,7 +31,7 @@ export const useTask = () => useContext(TaskContext);
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
     const router = useRouter();
-    const apiUrl = "http://localhost:3000/api/tasks";
+    const apiUrl = `/api/tasks`;
     const [task, setTask] = useState({
         detail: "",
     });
@@ -73,7 +73,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
     const deleteAllTasks = async () => {
         try {
-            let response = await fetch("http://localhost:3000/api/totalTasks", {
+            let response = await fetch(`/api/totalTasks`, {
                 method: "DELETE",
                 headers: {
                     'Content-Type': 'application/json',

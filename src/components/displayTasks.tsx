@@ -12,7 +12,7 @@ type Task = {
 };
 
 export default function DisplayTasks() {
-    const apiUrl = "http://localhost:3000/api/tasks";
+    const apiUrl = `/api/tasks`;
     const [totalTasks, setTotalTasks] = useState<Task[]>([]);
     const { postData, editTask, deleteTask } = useTask();
 
