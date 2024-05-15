@@ -42,12 +42,12 @@ export default function DisplayTasks() {
         <>
             {totalTasks.map((mainTask: any) => (
                 <div className={`${flexCenter} mb-3`} key={mainTask._id}>
-                    <input className={`${inputStyle} bg-slate-100 outline-none focus:outline-green-500 focus:bg-green-100`} value={mainTask.detail} onChange={(e) => handleDetailChange(mainTask._id, e.target.value)} />
+                    <input className={`${inputStyle} bg-slate-100 outline-none focus:outline-green-500 focus:bg-green-100`} value={mainTask.detail} onChange={(e) => handleDetailChange(mainTask._id, e.target.value)} aria-label="form-data" />
                     <div className="flex">
-                        <button className={`${buttonStyle} bg-green-500 hover:bg-green-600 px-2 mr-1`} onClick={() => editTask(mainTask)}>
+                        <button aria-label="update-task-button" className={`${buttonStyle} bg-green-500 hover:bg-green-600 px-2 mr-1`} onClick={() => editTask(mainTask)}>
                             <EditIcon className="text-[16px]" />
                         </button>
-                        <button className={`${buttonStyle} bg-red-500 hover:bg-red-600 px-2`} onClick={() => deleteTask(mainTask._id)}>
+                        <button aria-label="delete-task-button" className={`${buttonStyle} bg-red-500 hover:bg-red-600 px-2`} onClick={() => deleteTask(mainTask._id)}>
                             <DeleteIcon className="text-[16px]" />
                         </button>
                     </div>
